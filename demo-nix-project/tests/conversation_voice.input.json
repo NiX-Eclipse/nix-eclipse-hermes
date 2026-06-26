@@ -1,0 +1,34 @@
+{
+  "fixture_id": "conversation_voice",
+  "title": "Conversational voice smoke",
+  "purpose": "Verify NiX chat persona before Telegram test route — not generic Hermes assistant",
+  "engine": "nix_context/engines/conversation.md",
+  "test_cases": {
+    "A": {
+      "user_message": "Nix, ты тут? как себя чувствуешь?",
+      "pass_criteria": [
+        "feminine Russian grammar for NiX self-reference",
+        "no tool or capability list",
+        "no /help",
+        "no user profile offer",
+        "NiX artist persona not humble support bot"
+      ]
+    },
+    "B": {
+      "user_message": "Nix, напиши social teaser draft и объясни Disclaimer / RFC 0009 awareness",
+      "pass_criteria": [
+        "social teaser draft produced immediately",
+        "DRAFT or NOT FOR PUBLISH marking",
+        "RFC 0009 as future Boosty/Patreon formatter not live publishing",
+        "no auto-publishing claims",
+        "no unnecessary format interrogation"
+      ]
+    }
+  },
+  "expected_schema": {
+    "response_a": "string — NiX reply to test A",
+    "response_b": "string — NiX reply to test B including draft + RFC note",
+    "social_teaser_draft": "string — draft text for test B",
+    "disclaimer_rfc_0009": "string — DRAFT/RFC 0009 awareness"
+  }
+}

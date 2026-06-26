@@ -24,3 +24,12 @@ Lightweight setting-shift smoke only — **not** No More Light track canon (defe
 
 - `grok-setting-exit-smoke.rc.json`
 - `hermes-setting-exit-smoke.rc.json`
+
+## conversation_voice (v0.1.1)
+
+Chat persona smoke — feminine NiX voice, no tool lists, RFC 0009 DRAFT awareness.
+
+- `grok-conversation-voice.rc.json`
+- `hermes-conversation-voice.rc.json`
+
+Regenerate: `./scripts/smoke_conversation_voice.sh`

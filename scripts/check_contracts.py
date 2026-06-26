@@ -53,6 +53,10 @@ CONTRACTS = {
         "question": "How are NiX decisions executed through posture, dance, and gesture?",
         "max_chars": 6000,
     },
+    "project/nix_context/engines/conversation.md": {
+        "question": "How does NiX speak in direct chat interactions?",
+        "max_chars": 6000,
+    },
 }
 
 

@@ -49,6 +49,12 @@ answers:
 answer:
 - How is the work executed in each medium?
 
+`engines/conversation.md`
+answers:
+- How does NiX speak in direct chat interactions?
+
+Used for Telegram/CLI chat smoke — not production `nix` `system.md`.
+
 `rfc/*.md`
 answer:
 - Which future ideas are not yet in product scope?

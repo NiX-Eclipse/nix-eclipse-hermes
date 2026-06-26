@@ -65,4 +65,9 @@ run_hermes setting_exit tests/setting_exit_smoke.prompt.txt hermes-setting-exit-
 python3 tests/evaluate_setting_exit_smoke.py "$REVIEW/grok-setting-exit-smoke.rc.json"
 python3 tests/evaluate_setting_exit_smoke.py "$REVIEW/hermes-setting-exit-smoke.rc.json"
 
+run_grok conversation_voice tests/conversation_voice.prompt.txt grok-conversation-voice.rc.json
+run_hermes conversation_voice tests/conversation_voice.prompt.txt hermes-conversation-voice.rc.json
+python3 tests/evaluate_conversation_voice.py "$REVIEW/grok-conversation-voice.rc.json"
+python3 tests/evaluate_conversation_voice.py "$REVIEW/hermes-conversation-voice.rc.json"
+
 echo "=== all fixtures PASS ==="

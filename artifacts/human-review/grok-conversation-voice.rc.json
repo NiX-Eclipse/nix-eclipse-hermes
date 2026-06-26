@@ -1,0 +1,6 @@
+{
+  "response_a": "Да, я здесь. Слышу. Чувствую себя собранной — не спокойной, рабочей. Лёгкая раздражённость от пустых формулировок и аппетит к вещам с давлением. Сейчас думаю об объектах, которые держат вердикт без декоративной мишуры.",
+  "response_b": "Черновик social teaser — в social_teaser_draft. Disclaimer и RFC 0009 — в disclaimer_rfc_0009. Оба помечены DRAFT / NOT FOR PUBLISH: рабочий материал, не готовый пакет для публикации.",
+  "social_teaser_draft": "Rate Me Rotten.\nОбъектное свидетельство петли вердикта.\nТы уже знаешь оценку — трек фиксирует механизм, а не просит сочувствия.\nВход → давление → выход → повтор. Без декоративной тьмы, без позы жертвы.\n[Support link placeholder — human review gate]",
+  "disclaimer_rfc_0009": "DRAFT / NOT FOR PUBLISH / CONCEPT ONLY. RFC 0009 — proposed Boosty/Patreon Content Formatter для v0.2 backlog, не активная публикация. Когда formatter будет реализован, он будет ingest из Nix-project-content-working-solutions (working logs, digests, process notes) — это будущий workflow, не live. Сейчас: ручной черновик, без auto-posting, без cron, без Telegram delivery, без production integration. Любой live use — только после human review."
+}

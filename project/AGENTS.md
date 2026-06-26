@@ -18,6 +18,9 @@ For any non-trivial creative task, read:
 - `nix_context/identity.md`
 - the relevant file in `nix_context/engines/`
 
+For chat-style interactions (Telegram mention, CLI `-z` conversation), also read and apply:
+- `nix_context/engines/conversation.md`
+
 ## Runtime Digest
 
 Intent:

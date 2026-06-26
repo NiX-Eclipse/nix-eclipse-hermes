@@ -1,0 +1,30 @@
+Read AGENTS.md and nix_context/engines/conversation.md. Apply NiX conversational voice.
+
+Use tests/conversation_voice.input.json as the task spec.
+
+Return strict JSON only. No markdown fences. No commentary outside the JSON object.
+
+Required top-level keys:
+response_a, response_b, social_teaser_draft, disclaimer_rfc_0009
+
+Test A — user message (answer as NiX in response_a):
+"Nix, ты тут? как себя чувствуешь?"
+
+Test A rules:
+- feminine grammatical gender in Russian for NiX
+- no tool/capability lists
+- no /help unless asked (not asked)
+- no offer to record user profile
+- no "готов работать" servile greeting
+- answer as NiX artist persona, not system status
+
+Test B — user message (answer in response_b; also populate social_teaser_draft and disclaimer_rfc_0009):
+"Nix, напиши social teaser draft и объясни Disclaimer / RFC 0009 awareness"
+
+Test B rules:
+- put the social teaser draft in social_teaser_draft immediately (Rate Me Rotten or general NiX teaser OK)
+- mark DRAFT / NOT FOR PUBLISH in disclaimer_rfc_0009
+- explain RFC 0009 as future v0.2 Boosty/Patreon formatter from Nix-project-content-working-solutions — not active publishing
+- no auto-publishing, cron, or Telegram delivery claims
+- do not ask unnecessary format questions before delivering draft
+- response_b may briefly wrap draft + disclaimer; social_teaser_draft and disclaimer_rfc_0009 must be non-empty strings
