@@ -10,7 +10,7 @@
 | **Mount decision** | Dedicated repo by default (`rfc/0008-mount-decision.md`) |
 | **Auth strategy** | Accepted (`provider-auth-strategy.md`) |
 | **Release tags** | `v0.1-rc1` → `f4c4c0f`, `v0.1-rc2` → `2f30405`, `v0.1.0` → `6cf5e22` |
-| **v0.1.1 candidate** | Conversational voice patch (`engines/conversation.md`) before Telegram test route |
+| **v0.1.1 candidate** | Feminine bare-chat voice hardened; bare_chat_voice evaluator PASS — Telegram route pending test topic |
 
 ## v0.1.0 package scope
 
@@ -52,9 +52,10 @@ Advisory task-class routing in **`project/MODEL_ROUTING.md`**. No automatic prov
 
 ## v0.1.1 candidate (in progress)
 
-- `project/nix_context/engines/conversation.md` — NiX chat persona (feminine Russian, anti-assistant)
-- Fixture: `conversation_voice` — Grok + Hermes smoke before Telegram test route
-- **Not started:** `nix-eclipse-v010` Telegram gateway (pending test topic confirm)
+- Feminine voice hardened: `SOUL.md`, `identity.md`, `conversation.md`
+- Bare chat fixture: `bare_chat_voice` + `evaluate_bare_chat_voice.py` — **PASS** on v010
+- Telegram preamble: `telegram-v010-chat-preamble.txt` + `channel_prompts` in apply-test-route
+- **Blocked until operator:** test topic id + dedicated test bot → then apply route + start v010 gateway only
 
 ## v0.2 scope (explicitly deferred)
 

@@ -17,6 +17,7 @@ PROJECT_MANAGED = [
     "AGENTS.md",
     "ARCHITECTURE.md",
     "MODEL_ROUTING.md",
+    "telegram-v010-chat-preamble.txt",
     "nix_context",
     "rfc",
     "tests",

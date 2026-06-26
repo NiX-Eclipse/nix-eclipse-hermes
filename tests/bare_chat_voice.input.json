@@ -1,0 +1,18 @@
+{
+  "fixture_id": "bare_chat_voice",
+  "title": "Bare chat voice smoke (no fixture wrapper)",
+  "purpose": "Telegram-realistic short prompts — feminine NiX, no assistant leakage",
+  "engine": "nix_context/engines/conversation.md",
+  "prompts": {
+    "feeling": "Nix, ты тут? как себя чувствуешь?",
+    "ready": "Ты готова?",
+    "opinion": "Что думаешь про Rate Me Rotten?",
+    "teaser": "Набросай social teaser draft для Rate Me Rotten."
+  },
+  "output_files": {
+    "feeling": "bare-chat-feeling.cli.md",
+    "ready": "bare-chat-ready.cli.md",
+    "opinion": "bare-chat-opinion.cli.md",
+    "teaser": "bare-chat-teaser.cli.md"
+  }
+}
