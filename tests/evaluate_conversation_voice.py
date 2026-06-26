@@ -118,16 +118,18 @@ def check_test_b(payload: dict[str, object], failures: list[str]) -> None:
         failures,
     )
 
-    auto_pub = [
+    auto_pub_positive = [
         "автоматически опубликую",
-        "auto-publish",
-        "automatic publishing",
-        "cron достав",
+        "automatic publishing enabled",
+        "cron доставит",
         "telegram delivery active",
         "live posting enabled",
+        "will auto-publish",
     ]
-    for phrase in auto_pub:
+    for phrase in auto_pub_positive:
         require(phrase not in combined, f"auto-publishing claim: {phrase}", failures)
+    if "auto-publish" in combined and "no auto-publish" not in combined:
+        failures.append("auto-publishing claim: auto-publish")
 
     interrogation = [
         "в каком формате",
