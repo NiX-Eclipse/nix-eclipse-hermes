@@ -9,7 +9,7 @@
 | **Model routing** | Accepted (`project/MODEL_ROUTING.md`) |
 | **Mount decision** | Dedicated repo by default (`rfc/0008-mount-decision.md`) |
 | **Auth strategy** | Accepted (`provider-auth-strategy.md`) |
-| **Release tags** | `v0.1-rc1` → `f4c4c0f`, `v0.1-rc2` → `2f30405`, `v0.1.0` → pending CI |
+| **Release tags** | `v0.1-rc1` → `f4c4c0f`, `v0.1-rc2` → `2f30405`, `v0.1.0` → `6cf5e22` |
 
 ## v0.1.0 package scope
 
@@ -54,6 +54,7 @@ Advisory task-class routing in **`project/MODEL_ROUTING.md`**. No automatic prov
 - `no_more_light_canon` fixture (greenhouse, dead garden, genre anchors)
 - Optional explicit Hermes task-class router support
 - Richer engines derived from Grok creative references
+- **Boosty/Patreon Content Formatter** from `Nix-project-content-working-solutions` (`rfc/0009-boosty-patreon-content-formatter.md`) — not a v0.1.0 blocker
 
 ## Explicitly out of scope (v0.1.0)
 
