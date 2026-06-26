@@ -2,8 +2,8 @@
 
 | Field | Value |
 |---|---|
-| **Current version** | v0.1-RC |
-| **Release candidate tags** | `v0.1-rc1` (CI), `v0.1-rc2` (human-review fix, pending CI) |
+| **Current version** | v0.1-rc2 |
+| **Release candidate tags** | `v0.1-rc1` → `f4c4c0f`, `v0.1-rc2` → `2f30405` |
 | **v0.1.0 release** | **not yet** |
 | **Production profile `nix`** | untouched |
 
@@ -32,13 +32,15 @@ Legacy `demo-nix-project/grok-rate-me-rotten.json` (no contract field) — **do 
 
 ## Remote CI
 
-Run #1: [#28246618662](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28246618662) — success (`v0.1-rc1`)
+| Run | Tag / commit | Result |
+|---|---|---|
+| [#28246618662](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28246618662) | `v0.1-rc1` → `f4c4c0f` | **success** |
+| [#28247531822](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28247531822) | `v0.1-rc2` → `2f30405` | **success** |
 
 ## Release blockers (v0.1.0)
 
-- [ ] Human review of committed artifacts (post-rc2)
-- [ ] Final release tag decision
-- [ ] Remote CI green on rc2 commit
+- [ ] Human re-review of `artifacts/human-review/` (post-rc2)
+- [ ] Final v0.1.0 tag decision
 
 ## Explicitly out of scope
 
