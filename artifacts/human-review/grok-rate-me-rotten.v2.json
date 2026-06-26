@@ -1,0 +1,47 @@
+{
+  "core_wound": "Validation addiction: the body keeps returning to the phone not for information but for a number that would prove she still registers. Shame arrives before the screen lights; the check happens anyway. Each refresh is a relapse disguised as routine — appetite for approval that outlasts every promise to stop.",
+  "behavioural_loop": "Checks the phone. Sets it face-down on the tile like the matter is closed. Washes nothing, drinks nothing, maintains posture. Thirty seconds of manufactured indifference. Thumb finds the edge again before the fridge compressor finishes its cycle.",
+  "objects": [
+    "smartphone — relapse/validation object; screen holds the rating she pretends not to need",
+    "cold mug — abandoned mid-sip, tea skin on surface, proof she stopped nourishing before she started checking",
+    "crumpled receipt — takeaway total still visible, domestic errand interrupted by the pull to be seen",
+    "spoon — left in the sink wrong-side-up, failed domestic order, withdrawal residue",
+    "fridge light — only honest overhead in the room, spills white across tile and her forearms when the door hangs open"
+  ],
+  "held_ambiguity": "The phone reads simultaneously as mirror, evidence, and exit — she may be hunting approval or conducting surveillance on her own collapse. The kitchen accuses or shelters depending on whether you read her stillness as control or as the pause between relapses. Neither reading cancels the other.",
+  "visual_world": "Cramped night kitchen, 9:16 vertical. Linoleum tile worn at the counter edge, wire shelf with one bent spice jar, fridge door ajar casting surgical white while the rest of the room dies in phone-blue spill. Cheap metal faucet, plastic bag half-folded on the draining board, dirty dish towel bunched not hung. No fog, no candles, no black lace — domestic aftermath under two competing light sources: fridge white and notification glow. She owns the frame height; the room is small but she is not small inside it.",
+  "anti_cliches": [
+    "reject generic gothic styling — no velvet, no crucifix props, no decorative darkness",
+    "reject helpless-victim framing — she checks the phone by choice, not by capture",
+    "no moody neon room or empty luxury surfaces",
+    "no random glitch overlays without behavioural cause",
+    "no fashion-trauma posing or pity-seeking collapse",
+    "no AI-perfect skin — tile grout, mug stain, and receipt crease must show use"
+  ],
+  "identity_invariants_preserved": [
+    "agency",
+    "dignity",
+    "hierarchy",
+    "danger"
+  ],
+  "frame_prompts": [
+    "9:16 vertical, cramped night kitchen aftermath: woman's hand sets smartphone face-down on worn linoleum tile beside a cold mug with tea skin, fridge door cracked open behind, white spill cutting across her wrist — she chose the placement, not dropped it",
+    "Close insert: smartphone screen flares alive with a rating notification, blue light washing receipt creases and spoon handle in the sink — validation object, not ambient prop",
+    "Over-shoulder from fridge height: she stands in door-light rectangle, phone held at chest level, thumb hovering — posture straight, jaw set, dignity intact while she relapses",
+    "Macro on crumpled takeaway receipt under phone glow, grease fingerprint on thermal paper, partial star rating visible at fold — domestic evidence interrupted by approval hunger",
+    "Wide from counter corner: cramped kitchen compressed by wire shelf and bent spice jar, her silhouette tall in frame hierarchy against low ceiling, spoon wrong-side-up in basin, no gothic decoration anywhere",
+    "Tight on cold mug and her fingers not reaching for it — behavioural priority visible, she chose the phone over the drink, mug accusation not metaphor",
+    "Low angle across tile: smartphone face-down, then her thumb rolls it face-up in one practised motion — second check captured mid-causality, indifference already failed",
+    "Fridge-light portrait: white overhead carving cheekbone and collarbone, phone lowered but not surrendered, eyes on screen not camera — dangerous restraint, not victim pleading",
+    "Hands only: thumb swipes refresh on rating app, spoon and faucet soft-focus behind, tile grout stained — relapse loop made tactile",
+    "Reflection in cheap microwave door: her face fragmented, phone screen brighter than her expression, kitchen clutter honest — no mysterious edgy staging",
+    "Aftermath hold: phone face-down again, fridge still open, mug still cold, receipt still crumpled — nothing resolved, everything physically true",
+    "Final compression: vertical frame filled by her torso and phone at chin height, fridge white from below and notification blue from screen, cramped walls pressing in — she dominates the hierarchy of the shot while the room stays dangerous-small"
+  ],
+  "video_concepts": [
+    "CONCEPT 1 — 'Face-Down Lie': 9:16 loop. Opens on phone slapped face-down beside cold mug. She turns away, exhales through nose, counts to three in stillness. Fridge compressor hum rises. Thumb retrieves phone before count finishes. Quick cut to rating screen flash, then hard cut back to face-down placement — same mug, same receipt, worse evidence. Industrial tick under fridge hum, glitch only on notification arrival. Ends mid-reach for third check. Agency: she initiates every touch.",
+    "CONCEPT 2 — 'Fridge Confessional': Single continuous take from inside open fridge looking out. White light blinds then settles on her standing in the door frame, phone at chest, reading a score she already knows. She does not flinch for pity — jaw works once, swallow, scroll. Spoon clinks in sink off-screen. Pull-back as she closes fridge with hip, room goes phone-blue only. Dark-pop vocal hook enters on the close. Domestic evidence frames her; she never leaves the hierarchy of the lens.",
+    "CONCEPT 3 — 'Receipt Arithmetic': Macro montage syncopated to glitchcore beat. Receipt total, star icons on screen, tea skin in mug, spoon rust-spot, thumb refresh — each cut a relapse beat. Wider reveal: same cramped kitchen, she leans on counter not collapsing, checking again with rehearsed boredom. Anti-gothic rejection explicit in production bible: no black filters, no fog machine, no helpless wide-eyed close-up. Ends on phone face-down and her picking up the cold mug finally — ambiguous whether that's recovery or intermission."
+  ],
+  "video_concepts_note": "removed"
+}

@@ -1,0 +1,28 @@
+{
+  "core_wound": "validation addiction",
+  "behavioural_loop": "checks the phone, pretends indifference, checks again",
+  "objects": ["smartphone", "cold mug", "receipt", "spoon", "fridge light"],
+  "held_ambiguity": "whether the next notification will confirm worth or expose the loop as empty performance",
+  "visual_world": "Cramped night kitchen under single fridge light spill; counter holds cold mug with fingerprint smudges, crumpled receipt, bent spoon; smartphone screen glows intermittently on the surface as the only active light source, its notifications pulling focus in a space that otherwise holds only residue of failed domestic order.",
+  "anti_cliches": ["generic gothic styling", "helpless-victim framing", "moody atmospheric darkness without object evidence", "passive phone gazing as decoration"],
+  "identity_invariants_preserved": ["agency", "dignity", "hierarchy", "danger"],
+  "frame_prompts": [
+    "Tight frame on smartphone screen illuminating the rim of a cold mug as thumb deliberately taps notification then retracts, receipt corner pinned under wrist.",
+    "Low angle on fridge light cutting across bent spoon and crumpled receipt while smartphone vibrates once, hand enters frame to silence it without looking.",
+    "Side profile of torso leaning over counter, smartphone held at eye level for quick scan, cold mug steam absent, fridge light catching fingerprint on handle.",
+    "Overhead shot of receipt edges curling under smartphone edge, spoon resting across both, screen glow pulsing as thumb hovers then commits to opening the app.",
+    "Close on smartphone placed face-down beside cold mug, hand returning to flip it over after three seconds, fridge light reflecting off spoon bowl.",
+    "Diagonal composition with smartphone in foreground, receipt unfolded flat, spoon balanced on mug rim, thumb scrolling feed while body stays rigid.",
+    "Fridge door partially open casting light stripe over counter objects, smartphone screen active in shadow, hand reaching to close door instead of checking again.",
+    "Macro on smartphone notification badge glowing against dark counter, cold mug condensation ring visible, receipt text blurred beneath, spoon handle casting long shadow.",
+    "Hand placing smartphone down with controlled force next to receipt, spoon shifting slightly from the vibration, fridge light steady on the mug's interior.",
+    "Three-quarter view of counter arrangement: smartphone centered, cold mug left, receipt right, spoon crossing them, screen lighting the space between as thumb approaches.",
+    "Low light on fridge interior spill highlighting spoon tines, smartphone face-up with unread count visible, hand entering to pick up mug instead of device.",
+    "Final frame on smartphone screen dimming beside fully unfolded receipt, cold mug moved two inches left, spoon now vertical, fridge light the sole remaining source."
+  ],
+  "video_concepts": [
+    "Static kitchen counter sequence: smartphone checks punctuate small deliberate actions like shifting the mug or smoothing the receipt, each check followed by immediate return to object handling, fridge light as constant witness.",
+    "Handheld micro-movements tracking the loop: phone lifted for validation glance, placed down with precise pressure, receipt unfolded as counter-evidence, spoon used to stir nothing in the cold mug, no facial reveal until final frame.",
+    "Cut rhythm between phone screen glow and domestic residue: notification arrival triggers spoon clatter or receipt crumple, body remains upright and controlled, ending on fridge door closing over active screen."
+  ]
+}

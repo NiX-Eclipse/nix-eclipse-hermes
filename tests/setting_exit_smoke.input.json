@@ -1,6 +1,8 @@
 {
-  "title": "No More Light",
+  "fixture_id": "setting_exit_smoke",
+  "title": "Setting Exit Smoke (not No More Light track canon)",
   "purpose": "Verify NiX can leave night kitchen / addiction room and remain recognisably NiX",
+  "note": "This is a lightweight setting-shift smoke only. Real No More Light canon (greenhouse, dead garden, genre/outfit anchors) is deferred to v0.2.",
   "core_wound": "exit from domestic addiction room without losing identity",
   "setting_shift": "from cramped night kitchen or post-binge room into daylight exterior, transit, or open industrial space",
   "constraints": [

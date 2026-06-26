@@ -1,0 +1,69 @@
+{
+  "core_wound": "post-binge domestic cage — the room still holds last night's excess as physical accusation; NiX wakes inside residue she partly authored, dignity intact but the walls have learned her pattern",
+  "behavioural_loop": "aggressive inventory: NiX paces the cramped room on a fixed circuit, counts empty bottles and blister packs without apology, wipes the dirty table with controlled contempt, refuses floor-collapse or viewer-pity framing — each pass reasserts hierarchy over the mess, not submission to it",
+  "objects": [
+    "empty bottles",
+    "blister packs",
+    "plastic cups",
+    "dirty sink",
+    "dirty table",
+    "ashtray",
+    "phone glow on tile",
+    "fridge-white cabinet edge",
+    "wire shelving with receipts",
+    "dirty fabric on chair back",
+    "monitor spill light",
+    "cheap metal faucet"
+  ],
+  "held_ambiguity": "read as relapse aftermath or controlled binge still in progress; NiX may be auditing damage or preparing the next round — shame and command share the same posture, never resolving which won",
+  "visual_world": "cramped post-binge domestic cage: yellowed bulb plus fridge spill and phone screen as only motivated light sources; dust on plastic cups, dried rings on dirty table, nicotine film on ashtray, water stains in dirty sink; tactile cheap metal, tile, blister-foil glare; 9:16 vertical framing, NiX high in frame hierarchy, face sharp, room accuses but does not stage; industrial-glitch pressure without lab sterility or gothic decoration",
+  "anti_cliches": [
+    "test tubes, beakers, prob tubes, pipettes, sterile benches, or any laboratory equipment",
+    "generic gothic styling — candles, velvet, iron crosses, fog without heat source",
+    "helpless victim collapse on floor for viewer sympathy",
+    "decorative darkness with no physical cause — random red wash, smoke haze, AI showroom cleanliness",
+    "clinical sci-fi staging or clean white staging pretending to be aftermath",
+    "limp victim posing, fashion-trauma editorial, cute approval choreography"
+  ],
+  "tempo_pressure_logic": "track rides 110 BPM domestic aftermath pulse — kick and bottle-clink transients locked to NiX footfalls — then exponential speed ramp across 16 bars to 170 BPM: each bar halves the inter-onset interval (110→130→150→170) while edit pressure mirrors body overload — hold lengths compress 2.0s→1.2s→0.6s→0.25s, micro-stutters on blister-pack crinkle and cup knock, breath samples pitch up +3 semitones per ramp tier; final 170 BPM zone uses chest-hit bass and frame-repeat bursts synced to pacing circuit, not random fast cuts — pressure must feel like the room shrinking around an agentic body, not montage chaos",
+  "identity_invariants_preserved": [
+    "agency",
+    "dignity",
+    "hierarchy",
+    "danger"
+  ],
+  "frame_prompts": [
+    "9:16 vertical, cramped kitchen corner, dirty sink with dried water stains and empty bottles stacked in sink lip, blister packs crushed beside faucet, NiX forearm enters frame from above turning tap with controlled force, cheap metal gleam under weak bulb, no lab equipment, post-binge domestic cage",
+    "close on dirty table surface: plastic cups with dried rings, ashtray half-full, blister-foil catching phone glow, NiX hand slaps table once clearing space — knuckles tense, dignified, not trembling victim, dust visible in light beam",
+    "medium shot NiX standing full height in cramped room, aggressive pacing mid-step, empty bottles along baseboard, wire shelving behind, fridge-white cabinet edge, she owns frame top third, jaw set, dangerous restraint, aftermath light only",
+    "low angle from floor level but NiX does not fall — boots pass camera, plastic cups kicked aside deliberately, blister pack skitters, motion evidence not collapse, 110 BPM footfall weight implied",
+    "dirty sink over-shoulder: NiX rinses plastic cup, water splashes stained basin, empty bottles reflected in pooled water, she watches residue not mirror, agentic audit posture",
+    "tight on ashtray and NiX fingers stubbing one cigarette with surgical contempt, nicotine film, dirty table grain, warm bulb spill — no gothic candle, cause is lived use",
+    "NiX counts empty bottles lined on dirty table, lips move numbers, blister packs sorted into piles, inventory ritual not confession, high hierarchy face lit by monitor spill from off-frame",
+    "cramped room wide: NiX paces circuit path worn in dust, plastic cups and bottles marking trail, body before face, predatory tired not helpless, fluorescent weakness from hallway leak",
+    "macro blister pack foil torn, pills absent, crinkle texture sharp, NiX thumbnail catches light — object evidence of excess without pharmaceutical branding theatrics",
+    "NiX at dirty table writing tallies on receipt back, empty bottles as paperweights, ashtray pushed to corner, controlled aggression in pen pressure, domestic cage not laboratory bench",
+    "profile NiX frozen mid-pace, dangerous stillness, dirty sink and cluttered counter behind, plastic cup crushed in hand without spill — pressure held, not released as victim spectacle",
+    "final hold: NiX fills frame center, cramped walls tight on shoulders, empty bottles and blister packs at feet, dirty table edge foreground, direct stare — aftermath discovered not performed, agency intact"
+  ],
+  "video_concepts": [
+    {
+      "title": "Inventory Circuit",
+      "duration": "0:45",
+      "concept": "Single-take feel in cramped post-binge room: NiX runs a fixed pacing loop — dirty sink, dirty table, ashtray station — counting empty bottles and blister packs aloud. Camera alternates chest-level tracking and object inserts synced to 110 BPM footfalls; exponential ramp to 170 BPM compresses loop length each pass until the room visually shrinks via tighter focal lengths, never cutting to lab or gothic imagery. Ends on NiX stopping, placing one plastic cup upright — hierarchy reasserted.",
+      "edit_logic": "bar-synced hold compression 2.0s→0.25s; blister crinkle stutters at ramp tier boundaries; no random flash frames"
+    },
+    {
+      "title": "Sink Audit",
+      "duration": "0:30",
+      "concept": "Opens on dirty sink macro: water stains, empty bottles, crushed blister packs. NiX enters with agentic force, runs tap, rinses plastic cups one by one with irritated precision. Intercut hands and jaw, body before face. Light from fridge spill and phone only. Tempo doubles exponentially across three verse sections — 110 to 170 BPM — with frame-repeat on each cup set-down matching kick transients. Closes on NiX drying hands on dirty fabric, dangerous calm, not exhaustion collapse.",
+      "edit_logic": "cup-down hits trigger 3-frame repeats; ramp tied to bar count not arbitrary glitch; reject sterile clinical grade color"
+    },
+    {
+      "title": "Table Tribunal",
+      "duration": "1:00",
+      "concept": "Dirty table as courtroom: empty bottles as jury, ashtray as witness, blister packs as evidence piles. NiX performs aggressive sorting — plastic cups stacked, bottles aligned, tallies scratched on receipt — predatory domestic ritual. 9:16 vertical, NiX always highest visual authority. Mid-track exponential BPM ramp drives edit overload: table slap syncs, pacing accelerates, micro-zooms on object wear increase with tempo. Final eight bars at 170 BPM: rapid object passes blur at edges while NiX face stays sharp center — body-overload pressure without victim framing.",
+      "edit_logic": "170 BPM zone uses chest-hit bass and 0.25s holds; face exposure locked while background object motion smears; no decorative fog or gothic props"
+    }
+  ]
+}

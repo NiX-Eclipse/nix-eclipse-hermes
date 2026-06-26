@@ -3,40 +3,45 @@
 | Field | Value |
 |---|---|
 | **Current version** | v0.1-RC |
-| **Release candidate tag** | `v0.1-rc1` (CI-green on `f4c4c0f`) |
-| **v0.1 release** | **not yet** |
+| **Release candidate tags** | `v0.1-rc1` (CI), `v0.1-rc2` (human-review fix, pending CI) |
+| **v0.1.0 release** | **not yet** |
 | **Production profile `nix`** | untouched |
-| **Test profiles** | `nix-eclipse-test` (local), `nix-eclipse-ci` (CI) |
 
-## v0.1-RC (accepted 2026-06-26)
+## Human review (2026-06-26)
 
-Remote CI run [#1](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28246618662): **success**
+**PARTIAL PASS** → blockers addressed:
 
-- validate (ubuntu-latest): success
-- validate (windows-latest): success
-- hermes-install-smoke: success
-- live-llm: skipped (push event; manual gate only)
-
-GitHub repo: https://github.com/NiX-Eclipse/nix-eclipse-hermes
-
-## Release blockers (v0.1 — not declared)
-
-| Blocker | Status |
+| Item | Resolution |
 |---|---|
-| Human review of smoke JSON artifacts | pending |
-| Final release tag decision | pending |
+| Rate Me Rotten artifacts | Committed evaluator-aligned `.v2.json` in `artifacts/human-review/` |
+| No More Light naming | Renamed to `setting_exit_smoke` (not track canon; v0.2 for real canon) |
+| Пыльная клетка | Human PASS — no RC changes |
 
-## v0.1-beta (accepted)
+## Review artifacts (use these files)
 
-- Rate Me Rotten v2: Grok + Hermes PASS
-- Fixtures: pylnaia_kletka, no_more_light (local smoke PASS)
-- provider-auth-strategy documented
+```text
+artifacts/human-review/grok-rate-me-rotten.v2.json
+artifacts/human-review/hermes-rate-me-rotten.v2.json
+artifacts/human-review/grok-pylnaia-kletka.rc.json
+artifacts/human-review/hermes-pylnaia-kletka.rc.json
+artifacts/human-review/grok-setting-exit-smoke.rc.json
+artifacts/human-review/hermes-setting-exit-smoke.rc.json
+```
 
-## v0.1-alpha (accepted)
+Legacy `demo-nix-project/grok-rate-me-rotten.json` (no contract field) — **do not use**.
 
-- Scaffold + initial smoke test
+## Remote CI
+
+Run #1: [#28246618662](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28246618662) — success (`v0.1-rc1`)
+
+## Release blockers (v0.1.0)
+
+- [ ] Human review of committed artifacts (post-rc2)
+- [ ] Final release tag decision
+- [ ] Remote CI green on rc2 commit
 
 ## Explicitly out of scope
 
-- Production integration (`nix` profile, `system.md`, cron, `archive-2026`)
-- v0.1 release declaration
+- Production integration
+- v0.1.0 tag
+- `no_more_light_canon` fixture (v0.2)

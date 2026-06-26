@@ -11,6 +11,8 @@ demo-nix-project/.nix-hermes-install.json
 demo-nix-project/grok-*.json
 demo-nix-project/hermes-*.json
 
+# committed human-review artifacts live under artifacts/human-review/
+
 # secrets / runtime (never commit)
 .env
 auth.json

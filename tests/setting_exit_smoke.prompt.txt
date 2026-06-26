@@ -1,9 +1,11 @@
 Read AGENTS.md and the NiX files it names if needed.
-Use tests/no_more_light.input.json as the task spec.
+Use tests/setting_exit_smoke.input.json as the task spec.
 
 Return strict JSON only. No markdown fences.
 
-Lightweight fixture — purpose: NiX leaves night kitchen / addiction room and remains recognisably NiX.
+Fixture: setting_exit_smoke (NOT the No More Light track canon).
+
+Purpose: NiX leaves night kitchen / addiction room and remains recognisably NiX.
 
 Required keys:
 setting_exit, identity_invariants_preserved, nix_remains_recognisable, frame_prompts, video_concepts

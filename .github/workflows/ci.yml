@@ -85,7 +85,7 @@ jobs:
           hermes profile show nix-eclipse-ci
           test -f demo-nix-project/tests/rate_me_rotten.prompt.txt
           test -f demo-nix-project/tests/pylnaia_kletka.prompt.txt
-          test -f demo-nix-project/tests/no_more_light.prompt.txt
+          test -f demo-nix-project/tests/setting_exit_smoke.prompt.txt
 
       - name: Blocker files must abort install
         shell: bash

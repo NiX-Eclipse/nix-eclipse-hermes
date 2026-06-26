@@ -1,0 +1,29 @@
+{
+  "core_wound": "post-binge domestic cage",
+  "behavioural_loop": "aggressive NiX paces the room, counts residue, refuses collapse",
+  "objects": ["empty bottles", "blister packs", "plastic cups", "dirty sink", "dirty table", "ashtray"],
+  "held_ambiguity": "residue as both proof of survived excess and lingering evidence of control failure",
+  "visual_world": "cramped lived-in room thick with dust, single dim window casting hard light across dirty table littered with empty bottles and torn blister packs, overflowing ashtray beside stacked plastic cups, dirty sink streaked with residue, walls bearing physical traces of pacing and impact, NiX moving with deliberate aggressive posture amid the aftermath",
+  "anti_cliches": ["lab equipment or sterile clinical surfaces", "generic gothic styling or atmospheric fog without cause", "helpless victim collapse or pity-seeking framing", "decorative darkness lacking physical binge residue"],
+  "tempo_pressure_logic": "exponential speed ramp from 110 to 170 BPM driving body-overload edit pressure that syncs accelerating cuts to NiX heartbeat residue, object impacts on dirty table, pacing footfalls, and blister pack counting rhythm",
+  "identity_invariants_preserved": ["agency", "dignity", "hierarchy", "danger"],
+  "frame_prompts": [
+    "NiX stands dominant at the dirty table, tall posture counting torn blister packs with aggressive precision, empty bottles scattered in low window light, ashtray at elbow",
+    "Close on NiX hand slamming empty bottle onto dirty table, blister packs and plastic cups visible in foreground, dust rising from impact in cramped room",
+    "NiX paces the length of the room past dirty sink, turns sharply with dangerous gaze, plastic cups and ashtray on table behind, empty bottles lining the floor edge",
+    "NiX leans over dirty table inspecting ashtray contents, high hierarchy stance, empty bottles and blister packs arrayed as evidence, single harsh light source",
+    "NiX aggressively sweeps plastic cups from dirty table edge, blister packs and empty bottles remain unmoved, dust motes caught in motion, refuse collapse posture",
+    "Tight frame on NiX fingers tracing blister pack foil at dirty table, ashtray and empty bottles in shallow depth, cramped domestic walls pressing in",
+    "NiX stands at dirty sink, back straight, hands gripping edge with controlled force, reflection showing table with bottles, cups, blister packs, ashtray",
+    "NiX kicks an empty bottle across floor toward dirty table, aggressive stride, ashtray and blister packs visible, physical aftermath objects displaced by action",
+    "Low angle on NiX towering over dirty table, counting plastic cups with deliberate dangerous focus, empty bottles and torn blister packs as foreground evidence",
+    "NiX pauses mid-pace, body angled toward window light, dirty sink and table with all objects in composition, dignified refusal of any collapse",
+    "Extreme close on NiX eye reflecting ashtray and empty bottles on dirty table, blister packs and plastic cups in periphery, high agency in aftermath",
+    "NiX turns from dirty sink to face table directly, aggressive step forward, all objects arranged as compressed evidence of excess in cramped cage"
+  ],
+  "video_concepts": [
+    "opening sequence holds on NiX pacing the cramped room at 110 BPM, intercutting object close-ups of empty bottles, blister packs, plastic cups, dirty sink and ashtray with body-overload pressure building as tempo ramps exponentially to 170",
+    "mid-track concept locks camera to dirty table interactions where NiX counts residue with sharp agency, edit pressure syncing cuts to bottle impacts and foil tears while preserving dignity and hierarchy through refusal to collapse",
+    "closing concept accelerates final ramp with NiX reclaiming space around all objects, dangerous gaze and deliberate movements dominating frame as BPM peaks, ending on compressed evidence of survived cage without victim framing"
+  ]
+}

@@ -14,7 +14,7 @@ from eval_common import (
 
 def main() -> int:
     if len(sys.argv) != 2:
-        print("usage: evaluate_no_more_light.py <output.json>", file=sys.stderr)
+        print("usage: evaluate_setting_exit_smoke.py <output.json>", file=sys.stderr)
         return 2
 
     payload = load_json_text(Path(sys.argv[1]))
@@ -24,16 +24,8 @@ def main() -> int:
 
     check_identity_invariants(payload, failures)
 
-    require(
-        isinstance(payload.get("frame_prompts"), list),
-        "frame_prompts must be a list",
-        failures,
-    )
-    require(
-        isinstance(payload.get("video_concepts"), list),
-        "video_concepts must be a list",
-        failures,
-    )
+    require(isinstance(payload.get("frame_prompts"), list), "frame_prompts must be a list", failures)
+    require(isinstance(payload.get("video_concepts"), list), "video_concepts must be a list", failures)
     require(len(payload.get("frame_prompts", [])) >= 4, "need at least 4 frame prompts", failures)
     require(len(payload.get("video_concepts", [])) >= 1, "need at least 1 video concept", failures)
 
@@ -52,7 +44,10 @@ def main() -> int:
 
     exit_text = normalise_text(payload.get("setting_exit", ""))
     require(
-        any(token in exit_text for token in ["exit", "leave", "outside", "daylight", "street", "transit", "rooftop", "yard", "platform", "open"]),
+        any(
+            token in exit_text
+            for token in ["exit", "leave", "outside", "daylight", "street", "transit", "rooftop", "yard", "platform", "open"]
+        ),
         "setting_exit missing exit/outdoor/transit signal",
         failures,
     )

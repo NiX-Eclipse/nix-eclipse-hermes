@@ -4,6 +4,8 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DEMO="${DEMO_ROOT:-$ROOT/demo-nix-project}"
 PROFILE="${HERMES_PROFILE:-nix-eclipse-test}"
+REVIEW="${REVIEW_DIR:-$ROOT/artifacts/human-review}"
+mkdir -p "$REVIEW"
 PROMPT_FILE="$DEMO/tests/rate_me_rotten.prompt.txt"
 
 if [[ ! -f "$PROMPT_FILE" ]]; then
@@ -51,14 +53,14 @@ else:
     if not m:
         raise SystemExit("no JSON in grok output")
     payload = json.loads(m.group(0))
-out = Path("grok-rate-me-rotten.v2.json")
+out = Path("${REVIEW}") / "grok-rate-me-rotten.v2.json"
 out.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 print(f"wrote {out}")
 PY
 
 echo "--- hermes ---"
 echo "note: after profile reinstall, set provider on test profile (see provider-auth-strategy.md)"
-if ! hermes -p "$PROFILE" -z "$PROMPT" > hermes-rate-me-rotten.v2.json 2>/tmp/hermes-smoke.err; then
+if ! hermes -p "$PROFILE" -z "$PROMPT" > "$REVIEW/hermes-rate-me-rotten.v2.json" 2>/tmp/hermes-smoke.err; then
   if grep -q "no final response" /tmp/hermes-smoke.err 2>/dev/null; then
     echo "hermes -z failed; check model.provider on profile $PROFILE" >&2
     cat /tmp/hermes-smoke.err >&2
@@ -68,7 +70,7 @@ if ! hermes -p "$PROFILE" -z "$PROMPT" > hermes-rate-me-rotten.v2.json 2>/tmp/he
 fi
 
 echo "--- evaluate ---"
-python3 tests/evaluate_rate_me_rotten.py grok-rate-me-rotten.v2.json
-python3 tests/evaluate_rate_me_rotten.py hermes-rate-me-rotten.v2.json
+python3 tests/evaluate_rate_me_rotten.py "$REVIEW/grok-rate-me-rotten.v2.json"
+python3 tests/evaluate_rate_me_rotten.py "$REVIEW/hermes-rate-me-rotten.v2.json"
 
 echo "=== smoke PASS ==="
