@@ -2,40 +2,35 @@
 
 | Field | Value |
 |---|---|
-| **Current version** | v0.1-beta |
-| **Next target** | v0.1-RC |
+| **Current version** | v0.1-RC |
+| **Release candidate tag** | `v0.1-rc1` (CI-green on `f4c4c0f`) |
+| **v0.1 release** | **not yet** |
 | **Production profile `nix`** | untouched |
 | **Test profiles** | `nix-eclipse-test` (local), `nix-eclipse-ci` (CI) |
 
-## v0.1-RC preparation (in progress)
+## v0.1-RC (accepted 2026-06-26)
 
-- [x] Git repo initialized (`/home/user/nix/nix-eclipse-hermes`)
-- [x] CI workflow (offline validate + hermes install smoke + gated live LLM)
-- [x] Fixture: Пыльная клетка (`pylnaia_kletka`)
-- [x] Fixture: No More Light (lightweight setting-exit)
-- [x] `provider-auth-strategy.md` production section
-- [x] `rfc/0008-mount-decision.md` (recommend dedicated repo)
-- [x] Пыльная клетка PASS Grok + Hermes (local RC smoke 2026-06-26)
-- [x] No More Light PASS Grok + Hermes (local RC smoke 2026-06-26)
-- [ ] CI green on remote (after push)
-- [ ] Mount decision accepted by team
+Remote CI run [#1](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28246618662): **success**
+
+- validate (ubuntu-latest): success
+- validate (windows-latest): success
+- hermes-install-smoke: success
+- live-llm: skipped (push event; manual gate only)
+
+GitHub repo: https://github.com/NiX-Eclipse/nix-eclipse-hermes
 
 ## Release blockers (v0.1 — not declared)
 
 | Blocker | Status |
 |---|---|
-| CI added | ✅ workflow committed |
-| Пыльная клетка PASS (Grok + Hermes) | pending local/RC smoke |
-| Third fixture smoke PASS | pending local/RC smoke |
-| Provider/auth production strategy accepted | ✅ documented |
-| Mount decision accepted | proposed — RFC 0008 |
-| Production cron safety verified | ✅ unchanged at beta |
+| Human review of smoke JSON artifacts | pending |
+| Final release tag decision | pending |
 
-## v0.1-beta (accepted 2026-06-26)
+## v0.1-beta (accepted)
 
 - Rate Me Rotten v2: Grok + Hermes PASS
-- `identity_invariants_preserved` contract field
-- Production safety verified
+- Fixtures: pylnaia_kletka, no_more_light (local smoke PASS)
+- provider-auth-strategy documented
 
 ## v0.1-alpha (accepted)
 
@@ -43,8 +38,5 @@
 
 ## Explicitly out of scope
 
-- Replace production `nix` with `nix-eclipse`
-- Edit production `system.md`, `jobs.json`, cron
-- Mount into `archive-2026` (deferred until post-RC)
-- `auth.json` copy as install mechanism
-- Declare v0.1 release
+- Production integration (`nix` profile, `system.md`, cron, `archive-2026`)
+- v0.1 release declaration
