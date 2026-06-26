@@ -52,3 +52,9 @@ answer:
 `rfc/*.md`
 answer:
 - Which future ideas are not yet in product scope?
+
+`MODEL_ROUTING.md`
+answers:
+- Which model should handle which task class by risk?
+
+Advisory only for v0.1.0 planning. Does not auto-mutate provider config. See `provider-auth-strategy.md`.

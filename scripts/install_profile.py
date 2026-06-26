@@ -13,7 +13,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from check_contracts import check_package
 
 BLOCKERS = [".hermes.md", "HERMES.md"]
-PROJECT_MANAGED = ["AGENTS.md", "ARCHITECTURE.md", "nix_context", "rfc", "tests"]
+PROJECT_MANAGED = [
+    "AGENTS.md",
+    "ARCHITECTURE.md",
+    "MODEL_ROUTING.md",
+    "nix_context",
+    "rfc",
+    "tests",
+]
 
 
 def run(

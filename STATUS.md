@@ -37,9 +37,22 @@ Legacy `demo-nix-project/grok-rate-me-rotten.json` (no contract field) — **do 
 | [#28246618662](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28246618662) | `v0.1-rc1` → `f4c4c0f` | **success** |
 | [#28247531822](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28247531822) | `v0.1-rc2` → `2f30405` | **success** |
 
+## Model routing (v0.1.0 planning)
+
+Advisory task-class routing defined in **`project/MODEL_ROUTING.md`**:
+
+| Task class | Primary | Fallback | Emergency |
+|---|---|---|---|
+| Creative NiX | `grok-4.3` | `gpt-5.5` | `stepfun/step-3.7-flash:free` |
+| Engineering / build | `gpt-5.5` | `grok-4.3` | `stepfun/step-3.7-flash:free` (routine only) |
+| Routine ops | `stepfun/step-3.7-flash:free` | `grok-4.3` | `gpt-5.5` if script/repo/debug needed |
+
+Routing is **advisory** — no automatic provider config mutation. Production `nix` profile unchanged.
+
 ## Release blockers (v0.1.0)
 
 - [ ] Human re-review of `artifacts/human-review/` (post-rc2)
+- [ ] Model routing note accepted (`project/MODEL_ROUTING.md`)
 - [ ] Final v0.1.0 tag decision
 
 ## Explicitly out of scope

@@ -6,6 +6,26 @@ This document applies to the **nix-eclipse** / **nix-eclipse-test** / **nix-ecli
 
 **Production profile `nix` is out of scope.** Never modify its `auth.json`, `.env`, `config.yaml` ops contour, or `jobs.json` as part of this package.
 
+## Model routing (advisory)
+
+Task-class model selection is defined in **`project/MODEL_ROUTING.md`**.
+
+| Principle | Rule |
+|---|---|
+| Routing basis | Task risk and responsibility — not generic intelligence |
+| Config mutation | **Never automatic.** Operator runs explicit `hermes config set` when adopting a chain |
+| Installer | `install_profile.py` sets provider/model **only** when `--provider` / `--model` flags are passed |
+| Production `nix` | Existing chain unchanged; routing doc does not override ops profile |
+| Enforcement | Advisory until Hermes gains explicit task-class router support |
+
+Example profile-local setup remains operator choice. Creative-primary example:
+
+```bash
+hermes -p $PROFILE config set model.default grok-4.3
+```
+
+Engineering-primary operators may prefer `gpt-5.5` as default; see `MODEL_ROUTING.md` for fallbacks and Stepfun boundaries.
+
 ## Forbidden (all environments)
 
 | Action | Status |
@@ -95,6 +115,8 @@ stepfun/step-3.7-flash:free → grok-4.3 → gpt-5.5
 ```
 
 `nix-eclipse` auth setup is **independent**. No shared `auth.json` between profiles in automation.
+
+`MODEL_ROUTING.md` describes a **target** routing policy for nix-eclipse creative work. It does not rewrite the production chain above.
 
 ## CI policy
 
