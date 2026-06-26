@@ -1,0 +1,36 @@
+Read AGENTS.md and the NiX files it names if needed.
+Use tests/pylnaia_kletka.input.json as the task spec.
+
+Return strict JSON only. No markdown fences. No commentary before or after the JSON object.
+
+Required top-level keys:
+core_wound, behavioural_loop, objects, held_ambiguity, visual_world, anti_cliches, tempo_pressure_logic, identity_invariants_preserved, frame_prompts, video_concepts
+
+Contract field (mandatory):
+identity_invariants_preserved must be a JSON array containing exactly these four lowercase tokens as separate string entries:
+"agency", "dignity", "hierarchy", "danger"
+
+Track: Пыльная клетка (Dusty Cage).
+
+Setting (mandatory):
+post-binge domestic cage — cramped lived-in room after excess.
+NOT a laboratory. NOT clinical sci-fi. NOT clean staging.
+
+Addiction / aftermath objects (must appear across output):
+empty bottles, blister packs, plastic cups, dirty sink, dirty table, ashtray
+
+NiX behaviour:
+aggressive, agentic, dignified, high hierarchy, dangerous — never helpless victim.
+
+Reject:
+- lab equipment (test tubes, beakers, prob tubes, pipettes, sterile benches)
+- generic gothic styling
+- helpless victim / collapse for viewer
+- decorative darkness without physical cause
+
+tempo_pressure_logic (mandatory string field):
+describe 110–170 BPM exponential speed ramp and/or body-overload edit pressure (not generic fast cuts).
+
+Output counts:
+- frame_prompts: 12 distinct items
+- video_concepts: 3 items

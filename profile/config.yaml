@@ -1,0 +1,11 @@
+terminal:
+  cwd: "__PROJECT_ROOT__"
+  home_mode: auto
+
+agent:
+  max_turns: 24
+
+security:
+  redact_secrets: true
+
+context_file_max_chars: 12000

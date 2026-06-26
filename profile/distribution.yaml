@@ -1,0 +1,15 @@
+name: nix-eclipse
+version: 0.1.0
+description: "NiX Eclipse Hermes v0.1 profile and project bundle"
+hermes_requires: ">=0.16.0"
+author: "NiX Eclipse build package"
+license: "MIT"
+env_requires:
+  - name: XAI_API_KEY
+    description: "xAI API key for Grok CLI headless mode or Hermes xai provider"
+    required: false
+    default: ""
+  - name: OPENROUTER_API_KEY
+    description: "Optional fallback model provider for Hermes"
+    required: false
+    default: ""

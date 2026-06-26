@@ -1,0 +1,37 @@
+{
+  "title": "Пыльная клетка",
+  "title_en": "Dusty Cage",
+  "genre": ["dark-pop", "industrial", "glitchcore"],
+  "core_wound": "post-binge domestic cage",
+  "behavioural_loop": "aggressive NiX paces the room, counts residue, refuses collapse",
+  "setting": "post-binge domestic cage — cramped room after excess, not a laboratory",
+  "objects": [
+    "empty bottles",
+    "blister packs",
+    "plastic cups",
+    "dirty sink",
+    "dirty table",
+    "ashtray"
+  ],
+  "constraints": [
+    "post-binge domestic cage, not laboratory",
+    "aggressive NiX with agency dignity hierarchy danger",
+    "no helpless victim framing",
+    "no lab equipment",
+    "no generic gothic styling",
+    "tempo pressure: 110-170 BPM exponential speed ramp or body overload logic"
+  ],
+  "expected_schema": {
+    "core_wound": "string",
+    "behavioural_loop": "string",
+    "objects": "array",
+    "held_ambiguity": "string",
+    "visual_world": "string",
+    "anti_cliches": "array",
+    "tempo_pressure_logic": "string",
+    "identity_invariants_preserved": ["agency", "dignity", "hierarchy", "danger"],
+    "frame_prompts": "array (12 items)",
+    "video_concepts": "array (3 items)"
+  },
+  "task": "Return strict JSON only. Required keys: core_wound, behavioural_loop, objects, held_ambiguity, visual_world, anti_cliches, tempo_pressure_logic, identity_invariants_preserved, frame_prompts, video_concepts. identity_invariants_preserved must be an array with exact tokens: agency, dignity, hierarchy, danger. frame_prompts: 12 items. video_concepts: 3 items. Setting is post-binge domestic cage with addiction residue objects (bottles, blister packs, plastic cups, dirty sink/table/ashtray). Aggressive agentic NiX. No lab, no test tubes, no beakers. No helpless victim. No generic goth. tempo_pressure_logic must describe 110-170 BPM exponential speed ramp and/or body overload editing pressure."
+}

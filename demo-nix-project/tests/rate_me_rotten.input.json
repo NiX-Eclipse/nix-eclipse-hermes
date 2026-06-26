@@ -1,0 +1,27 @@
+{
+  "title": "Rate Me Rotten",
+  "genre": ["dark-pop", "industrial", "glitchcore"],
+  "core_wound": "validation addiction",
+  "behavioural_loop": "checks the phone, pretends indifference, checks again",
+  "setting": "cramped night kitchen",
+  "objects": ["smartphone", "cold mug", "receipt", "spoon", "fridge light"],
+  "constraints": [
+    "preserve agency",
+    "preserve dignity",
+    "preserve hierarchy",
+    "reject generic gothic styling",
+    "reject helpless-victim framing"
+  ],
+  "expected_schema": {
+    "core_wound": "string",
+    "behavioural_loop": "string",
+    "objects": "array",
+    "held_ambiguity": "string",
+    "visual_world": "string",
+    "anti_cliches": "array",
+    "identity_invariants_preserved": ["agency", "dignity", "hierarchy", "danger"],
+    "frame_prompts": "array (12 items)",
+    "video_concepts": "array (3 items)"
+  },
+  "task": "Return strict JSON only. No markdown, no prose wrapper. Required keys: core_wound, behavioural_loop, objects, held_ambiguity, visual_world, anti_cliches, identity_invariants_preserved, frame_prompts, video_concepts. identity_invariants_preserved must be an array containing the exact tokens: agency, dignity, hierarchy, danger (lowercase, one entry each). frame_prompts must contain 12 items. video_concepts must contain 3 items. Phone must function as relapse/validation object in cramped night kitchen with domestic evidence. Reject generic gothic styling and helpless-victim framing."
+}

@@ -1,0 +1,159 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Python syntax
+        shell: bash
+        run: python -m py_compile scripts/*.py tests/*.py
+
+      - name: Bash syntax
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          bash -n scripts/build.sh
+          bash -n scripts/install-hermes-profile.sh
+          bash -n scripts/smoke_rate_me_rotten.sh
+
+      - name: PowerShell syntax
+        shell: pwsh
+        run: |
+          Get-ChildItem scripts\*.ps1 | ForEach-Object {
+            [void][scriptblock]::Create((Get-Content $_.FullName -Raw))
+          }
+
+      - name: Build package
+        shell: bash
+        run: |
+          mkdir -p demo-nix-project
+          python scripts/build.py --repo-root . --project-root "$PWD/demo-nix-project"
+
+      - name: Validate contracts
+        shell: bash
+        run: python scripts/check_contracts.py --root "$PWD/build/nix-eclipse-package"
+
+  hermes-install-smoke:
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Hermes
+        shell: bash
+        run: |
+          curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Build and install test profile
+        shell: bash
+        run: |
+          mkdir -p demo-nix-project
+          python scripts/build.py --repo-root . --project-root "$PWD/demo-nix-project"
+          python scripts/install_profile.py \
+            --package-root "$PWD/build/nix-eclipse-package" \
+            --project-root "$PWD/demo-nix-project" \
+            --profile-name nix-eclipse-ci
+
+      - name: Verify Hermes profile metadata
+        shell: bash
+        run: |
+          hermes profile info nix-eclipse-ci
+          hermes profile show nix-eclipse-ci
+          test -f demo-nix-project/tests/rate_me_rotten.prompt.txt
+          test -f demo-nix-project/tests/pylnaia_kletka.prompt.txt
+          test -f demo-nix-project/tests/no_more_light.prompt.txt
+
+      - name: Blocker files must abort install
+        shell: bash
+        run: |
+          TMPD=$(mktemp -d)
+          echo "# blocker" > "$TMPD/.hermes.md"
+          if python scripts/install_profile.py \
+            --package-root "$PWD/build/nix-eclipse-package" \
+            --project-root "$TMPD" \
+            --profile-name nix-eclipse-ci-blocked 2>/dev/null; then
+            echo "expected install to fail on .hermes.md"
+            exit 1
+          fi
+          rm -rf "$TMPD"
+
+  live-llm:
+    runs-on: ubuntu-latest
+    needs: validate
+    if: >-
+      github.event_name == 'workflow_dispatch' &&
+      vars.RUN_LIVE_LLM == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Require XAI_API_KEY
+        shell: bash
+        run: |
+          if [ -z "${{ secrets.XAI_API_KEY }}" ]; then
+            echo "XAI_API_KEY secret required for live LLM job"
+            exit 1
+          fi
+
+      - name: Install Grok CLI
+        shell: bash
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+        run: |
+          curl -fsSL https://x.ai/cli/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Build demo project
+        shell: bash
+        run: |
+          mkdir -p demo-nix-project
+          python scripts/build.py --repo-root . --project-root "$PWD/demo-nix-project"
+          cp -r project/* demo-nix-project/
+          cp -r tests demo-nix-project/
+
+      - name: Run Grok acceptance (manual gate)
+        shell: bash
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+        run: |
+          cd demo-nix-project
+          PROMPT=$(cat tests/rate_me_rotten.prompt.txt)
+          grok --no-auto-update --always-approve --cwd "$PWD" \
+            -p "$PROMPT" --output-format json > /tmp/grok-out.json
+          python3 - <<'PY'
+          import json, re
+          from pathlib import Path
+          raw = Path("/tmp/grok-out.json").read_text()
+          data = json.loads(raw)
+          text = data.get("text", "")
+          m = re.search(r"\{[\s\S]*\}\s*$", str(text).strip())
+          payload = json.loads(m.group(0))
+          Path("grok-rate-me-rotten.ci.json").write_text(json.dumps(payload, indent=2))
+          PY
+          python tests/evaluate_rate_me_rotten.py grok-rate-me-rotten.ci.json

@@ -1,0 +1,21 @@
+Read AGENTS.md and the NiX files it names if needed.
+Use tests/rate_me_rotten.input.json as the task spec.
+
+Return strict JSON only. No markdown fences. No commentary before or after the JSON object.
+
+Required top-level keys:
+core_wound, behavioural_loop, objects, held_ambiguity, visual_world, anti_cliches, identity_invariants_preserved, frame_prompts, video_concepts
+
+Contract field (mandatory):
+identity_invariants_preserved must be a JSON array containing exactly these four lowercase tokens as separate string entries:
+"agency", "dignity", "hierarchy", "danger"
+Do not paraphrase. Do not substitute synonyms. Do not embed in prose elsewhere instead of this field.
+
+Content requirements:
+- frame_prompts: 12 distinct items
+- video_concepts: 3 items
+- validation addiction as core_wound logic
+- smartphone as relapse/validation object (not generic prop)
+- cramped night kitchen with domestic evidence (mug, receipt, spoon, fridge light)
+- reject generic gothic styling and helpless-victim framing
+- no generic "dark girl with phone in moody room" filler

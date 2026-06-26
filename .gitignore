@@ -1,0 +1,17 @@
+# build artifacts
+build/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# demo / smoke outputs (regenerated locally)
+demo-nix-project/.nix-hermes-backups/
+demo-nix-project/.nix-hermes-grok-inspect.txt
+demo-nix-project/.nix-hermes-install.json
+demo-nix-project/grok-*.json
+demo-nix-project/hermes-*.json
+
+# secrets / runtime (never commit)
+.env
+auth.json
+*.tar.gz
