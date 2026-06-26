@@ -2,22 +2,24 @@
 
 | Field | Value |
 |---|---|
-| **Current version** | v0.1-rc2 |
-| **Release candidate tags** | `v0.1-rc1` → `f4c4c0f`, `v0.1-rc2` → `2f30405` |
-| **v0.1.0 release** | **not yet** |
-| **Production profile `nix`** | untouched |
+| **Current version** | **v0.1.0** |
+| **Release type** | Package release only |
+| **Production integration** | Not performed |
+| **Production profile `nix`** | Untouched |
+| **Model routing** | Accepted (`project/MODEL_ROUTING.md`) |
+| **Mount decision** | Dedicated repo by default (`rfc/0008-mount-decision.md`) |
+| **Auth strategy** | Accepted (`provider-auth-strategy.md`) |
+| **Release tags** | `v0.1-rc1` → `f4c4c0f`, `v0.1-rc2` → `2f30405`, `v0.1.0` → pending CI |
 
-## Human review (2026-06-26)
+## v0.1.0 package scope
 
-**PARTIAL PASS** → blockers addressed:
+Hermes creative package: profile SOUL + project AGENTS/nix_context + acceptance fixtures + CI.
 
-| Item | Resolution |
-|---|---|
-| Rate Me Rotten artifacts | Committed evaluator-aligned `.v2.json` in `artifacts/human-review/` |
-| No More Light naming | Renamed to `setting_exit_smoke` (not track canon; v0.2 for real canon) |
-| Пыльная клетка | Human PASS — no RC changes |
+**Not included:** production `nix` install, cron/auth/jobs mutation, `archive-2026` mount.
 
-## Review artifacts (use these files)
+## Human review (accepted for v0.1.0 package)
+
+Artifacts in `artifacts/human-review/` accepted for package release scope:
 
 ```text
 artifacts/human-review/grok-rate-me-rotten.v2.json
@@ -30,16 +32,9 @@ artifacts/human-review/hermes-setting-exit-smoke.rc.json
 
 Legacy `demo-nix-project/grok-rate-me-rotten.json` (no contract field) — **do not use**.
 
-## Remote CI
+## Model routing
 
-| Run | Tag / commit | Result |
-|---|---|---|
-| [#28246618662](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28246618662) | `v0.1-rc1` → `f4c4c0f` | **success** |
-| [#28247531822](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28247531822) | `v0.1-rc2` → `2f30405` | **success** |
-
-## Model routing (v0.1.0 planning)
-
-Advisory task-class routing defined in **`project/MODEL_ROUTING.md`**:
+Advisory task-class routing in **`project/MODEL_ROUTING.md`**. No automatic provider config mutation.
 
 | Task class | Primary | Fallback | Emergency |
 |---|---|---|---|
@@ -47,16 +42,21 @@ Advisory task-class routing defined in **`project/MODEL_ROUTING.md`**:
 | Engineering / build | `gpt-5.5` | `grok-4.3` | `stepfun/step-3.7-flash:free` (routine only) |
 | Routine ops | `stepfun/step-3.7-flash:free` | `grok-4.3` | `gpt-5.5` if script/repo/debug needed |
 
-Routing is **advisory** — no automatic provider config mutation. Production `nix` profile unchanged.
+## Remote CI
 
-## Release blockers (v0.1.0)
+| Run | Tag / commit | Result |
+|---|---|---|
+| [#28246618662](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28246618662) | `v0.1-rc1` → `f4c4c0f` | **success** |
+| [#28247531822](https://github.com/NiX-Eclipse/nix-eclipse-hermes/actions/runs/28247531822) | `v0.1-rc2` → `2f30405` | **success** |
 
-- [ ] Human re-review of `artifacts/human-review/` (post-rc2)
-- [ ] Model routing note accepted (`project/MODEL_ROUTING.md`)
-- [ ] Final v0.1.0 tag decision
+## v0.2 scope (explicitly deferred)
 
-## Explicitly out of scope
+- `no_more_light_canon` fixture (greenhouse, dead garden, genre anchors)
+- Optional explicit Hermes task-class router support
+- Richer engines derived from Grok creative references
+
+## Explicitly out of scope (v0.1.0)
 
 - Production integration
-- v0.1.0 tag
-- `no_more_light_canon` fixture (v0.2)
+- Production `nix` profile mutation (`system.md`, cron, `jobs.json`, auth, gateway, `terminal.cwd`)
+- `archive-2026` mount
