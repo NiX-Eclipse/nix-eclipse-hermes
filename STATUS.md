@@ -59,6 +59,16 @@ Also blocks manifesto leakage: no «Я — NiX Eclipse» casual openers, no unpr
 
 Run manually: `python3 scripts/random_pulse_cron.py --force` (or `--dry-run --force`).
 
+## soul_notes QA follow-up (2026-06-27)
+
+| Item | State |
+|---|---|
+| Seed-specific guidance | `soul_notes.md` → `empty seed / free pulse`, `хочу в космос` |
+| Runtime validation | `validate_output()` — length, diary markers, sections, CJK, kitchen-sink, space checklist |
+| CLI | `--free` forces empty seed |
+| Edge re-QA | `free_v2` + `kosmos_v2` pass validation after patch |
+| Cron registration | **Still deferred** — human review of re-QA drafts first |
+
 **Verification:** Re-run 7-prompt Telegram smoke in production chat for human review.
 
 ## v0.1.0 / v0.1.1 package scope

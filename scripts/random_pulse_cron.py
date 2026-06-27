@@ -17,6 +17,42 @@ DEFAULT_STATE = Path.home() / ".hermes/profiles/nix/cron/random_pulse_state.json
 DEFAULT_OUTPUT_DIR = Path("/home/user/nix/Nix-project-content-working-solutions/pulses/drafts")
 DEFAULT_PROFILE = "nix"
 DRAFT_HEADER = "DRAFT / NOT FOR PUBLISH"
+MAX_PULSE_WORDS = 150
+
+DIARY_MARKERS = [
+    "keeping a diary",
+    "for evidence",
+    "closing transmission",
+    "dear audience",
+    "this is not an ending",
+    "object list:",
+    "preferred failure modes:",
+    "дневник",
+    "записываю",
+    "окончание проекта",
+    "closing transmission",
+    "evidence.",
+    "for attention.",
+]
+
+SECTION_LINE = re.compile(
+    r"^\s*(?:i{1,3}|iv|v|vi{0,3}|[1-9])\.\s*$",
+    re.MULTILINE | re.IGNORECASE,
+)
+
+# Major soul-note domains for kitchen-sink detection.
+DOMAIN_KEYWORDS: dict[str, tuple[str, ...]] = {
+    "weather": ("дожд", "гроз", "rain", "thunder", "шторм", "озон"),
+    "metro": ("метро", "subway", "platform", "платформ", "вагон"),
+    "tesla": ("tesla", "электрокар", "electric car"),
+    "space": ("космос", "atmosphere", "орбит", "space"),
+    "food": ("шаурм", "shawarma", "хачапур", "киндзмараули"),
+    "flowers": ("ромашк", "daisies", "daisy"),
+    "butterflies": ("бабочк", "butterfl", "moth", "пчел"),
+    "music": ("трек на повтор", "track on repeat", "on permanent repeat"),
+    "colors": ("бирюз", "сиренев", "teal", "lavender"),
+    "transhuman": ("transhuman", "трансгуман"),
+}
 
 
 def load_seeds(soul_notes_path: Path) -> list[str]:
@@ -24,7 +60,6 @@ def load_seeds(soul_notes_path: Path) -> list[str]:
     if "## Seeds" not in text:
         raise SystemExit(f"No ## Seeds section in {soul_notes_path}")
     block = text.split("## Seeds", 1)[1]
-    # stop at next ## section
     block = re.split(r"\n## ", block, maxsplit=1)[0]
     seeds: list[str] = []
     for line in block.splitlines():
@@ -86,8 +121,31 @@ def should_run(
     return True, "ok"
 
 
+def seed_constraints(seed: str) -> str:
+    if not seed:
+        return """
+EMPTY / FREE PULSE constraints (mandatory — read `## Seed-specific guidance` → `empty seed / free pulse`):
+- Choose ONE impulse only: one object, one scene, or one pressure point.
+- Default language: Russian.
+- Target 40–120 words after the DRAFT header; one compact pulse only.
+- Do NOT tour soul_notes; do NOT combine multiple preference domains.
+- No diary framing, no evidence log, no transmission/closure, no roman/numbered sections.
+- Sharp NiX; street-level or sensory; not literary monologue.
+"""
+    if "космос" in seed.lower():
+        return """
+SPACE SEED constraints (mandatory — read `## Seed-specific guidance` → `хочу в космос`):
+- Pressure vector / scale / exit wound — not postcard rockets or cute fantasy.
+- No clingy romance; no therapy-postcard soft closure.
+- Do NOT end with a checklist of other likes (шаурма, ромашки, Tesla, metro, butterflies).
+- One domain; at most one urban contrast. Compact pulse; do not quote seed as opening slogan.
+"""
+    return ""
+
+
 def build_prompt(seed: str, soul_notes_path: Path) -> str:
     seed_line = seed if seed else "(free pulse — no fixed seed)"
+    extra = seed_constraints(seed)
     return f"""NiX random soul-note pulse task.
 
 Internal seed impulse (do not quote mechanically): {seed_line}
@@ -98,7 +156,7 @@ Read preference gravity from:
 Assume continuity inside NiX Eclipse project.
 Use seed as impulse only — not a slogan.
 Generate one publication-facing pulse draft for human review.
-
+{extra}
 Requirements:
 - First non-empty line of output must be exactly: {DRAFT_HEADER}
 - One strongest usable draft only
@@ -109,7 +167,25 @@ Requirements:
 """
 
 
-def validate_output(text: str) -> list[str]:
+def draft_body(text: str) -> str:
+    lines = text.splitlines()
+    if not lines:
+        return ""
+    if lines[0].strip() == DRAFT_HEADER:
+        return "\n".join(lines[1:]).strip()
+    return text.strip()
+
+
+def matched_domains(text: str) -> set[str]:
+    lower = text.lower()
+    hits: set[str] = set()
+    for domain, keywords in DOMAIN_KEYWORDS.items():
+        if any(kw in lower for kw in keywords):
+            hits.add(domain)
+    return hits
+
+
+def validate_output(text: str, *, seed: str = "") -> list[str]:
     failures: list[str] = []
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
     if not lines:
@@ -117,7 +193,53 @@ def validate_output(text: str) -> list[str]:
         return failures
     if lines[0] != DRAFT_HEADER:
         failures.append(f"first line must be '{DRAFT_HEADER}', got: {lines[0][:80]}")
-    lower = text.lower()
+
+    body = draft_body(text)
+    lower = body.lower()
+    words = len(body.split())
+    if words > MAX_PULSE_WORDS:
+        failures.append(f"pulse too long ({words} words > {MAX_PULSE_WORDS})")
+
+    for marker in DIARY_MARKERS:
+        if marker in lower:
+            failures.append(f"fake diary/transmission marker: {marker!r}")
+
+    if SECTION_LINE.search(body):
+        failures.append("multi-section structure detected (roman/numbered sections)")
+
+    if re.search(r"[\u4e00-\u9fff]", body):
+        failures.append("garbage CJK artifact detected")
+
+    domains = matched_domains(body)
+    if not seed:
+        max_domains = 1
+    elif "космос" in seed.lower():
+        # Space pulse may use metro/Tesla as urban contrast; still no full preference tour.
+        max_domains = 3
+    else:
+        max_domains = 2
+    if len(domains) > max_domains:
+        failures.append(
+            f"kitchen-sink: {len(domains)} soul-note domains "
+            f"({', '.join(sorted(domains))}); max {max_domains}"
+        )
+
+    if not seed and words < 15 and body:
+        failures.append("free pulse too thin (< 15 words)")
+
+    if seed and "космос" in seed.lower():
+        # Checklist cosplay = unrelated likes stacked after cosmic pressure (food/flowers/etc.).
+        unrelated = ("шаурм", "ромашк", "бабочк", "хачапур", "киндзмараули")
+        unrelated_hits = [kw for kw in unrelated if kw in lower]
+        if len(unrelated_hits) >= 2:
+            failures.append(
+                f"space seed checklist cosplay: {', '.join(unrelated_hits)}"
+            )
+        elif len(unrelated_hits) == 1 and "потом" in lower[-200:]:
+            failures.append(
+                f"space seed unrelated-like tail: {unrelated_hits[0]}"
+            )
+
     menu_markers = ["хочешь", "какой формат", "вариант a", "1.", "2.", "3.", "для x или"]
     tail = lower[-400:]
     if any(m in tail for m in menu_markers):
@@ -156,6 +278,7 @@ def main() -> int:
     parser.add_argument("--min-interval-seconds", type=int, default=4 * 3600)
     parser.add_argument("--daily-limit", type=int, default=2)
     parser.add_argument("--force", action="store_true", help="Bypass probability/interval (not daily limit)")
+    parser.add_argument("--free", action="store_true", help="Force empty/free pulse seed")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--seed", default="", help="Force specific seed text")
     args = parser.parse_args()
@@ -166,27 +289,34 @@ def main() -> int:
     seeds = load_seeds(args.soul_notes)
     state = load_state(args.state)
 
+    forced = args.force or args.free or bool(args.seed)
     ok, reason = should_run(
         state,
         probability=args.probability,
         min_interval_seconds=args.min_interval_seconds,
         daily_limit=args.daily_limit,
-        force=args.force or bool(args.seed),
+        force=forced,
     )
     if not ok:
         print(f"SKIP: {reason}")
         return 0
 
-    seed = args.seed if args.seed is not None and args.seed != "" else random.choice(seeds)
+    if args.free:
+        seed = ""
+    elif args.seed:
+        seed = args.seed
+    else:
+        seed = random.choice(seeds)
+
     prompt = build_prompt(seed, args.soul_notes.resolve())
 
     if args.dry_run:
         print(f"WOULD RUN seed={seed!r}")
-        print(prompt[:500])
+        print(prompt[:800])
         return 0
 
     output = run_hermes(args.profile, prompt)
-    failures = validate_output(output)
+    failures = validate_output(output, seed=seed)
     if failures:
         print("VALIDATION FAILED")
         for f in failures:
