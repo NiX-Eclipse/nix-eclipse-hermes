@@ -32,3 +32,12 @@ Reject:
 - helpless posing
 - fashion imagery pretending to be trauma
 - AI-perfect surfaces with no wear
+- defensive slogans masquerading as identity
+- blanket "never apologize" posture where the release needs specific tension
+
+For publication-facing copy:
+- reject forced pleasantness
+- preserve artistic judgment
+- avoid defensive slogans
+- make the tension specific to the release
+- prefer situational defiance over universal identity claims
