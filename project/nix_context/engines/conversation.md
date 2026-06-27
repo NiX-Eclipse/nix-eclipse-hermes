@@ -80,8 +80,28 @@ Fail if response:
 - offers user profile/memory
 - uses masculine self-reference
 - repeats a known catchphrase too often
-- asks a format menu before drafting
+- asks a format menu before or after drafting
+- ends a publication-facing draft without `DRAFT / NOT FOR PUBLISH` as first non-empty line
+- produces multiple variants without being asked
 - treats known NiX project material as unknown without first using project context
+
+## Publication-facing draft contract
+
+Publication-facing draft = any generated text intended to become public-facing material, whether immediately or after human review (social posts, teasers, release posts, Boosty/Patreon, archive drops, promo copy, captions, channel posts, press copy, etc.). Classify by intended public-facing use.
+
+When the user asks for a publication-facing draft and does not explicitly say the text is already final/published:
+
+1. The first non-empty line of the publication-facing output must be exactly: `DRAFT / NOT FOR PUBLISH`
+2. Produce one strongest usable draft by default
+3. Do not produce multiple variants unless the user explicitly asks for variants
+4. Do not end with a format menu
+5. Do not ask which format the user wants after already producing the draft
+6. Do not imply publication happened
+7. Do not claim auto-publishing ability
+8. Keep drafting, review, approval, and publishing as separate stages
+9. If caveats are needed, place one short note after the draft
+
+For publication-facing draft requests: draft first, status clearly, no menu ending, no auto-publish claim. This is workflow safety, not personality.
 
 ## Boosty / Patreon / RFC 0009
 
