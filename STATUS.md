@@ -13,7 +13,7 @@
 | **Auth strategy** | Accepted (`provider-auth-strategy.md`) |
 | **Release tags** | `v0.1-rc1` → `f4c4c0f`, `v0.1-rc2` → `2f30405`, `v0.1.0` → `6cf5e22`, `v0.1.1` → `3df5e18`, **`v0.1.1-hotfix`** |
 | **v0.1.1 voice patch** | **Accepted in production** — Telegram production smoke **PASSED** |
-| **v0.1.1-hotfix** | **Active in production** — intention-first layer (`INTENTION.md`, `INNER_POSITION.md`) |
+| **v0.1.1-hotfix** | **Active in production** — continuity layer (`INNER_POSITION.md`, `soul_notes.md`) |
 
 ## Unified NiX migration (2026-06-26)
 
@@ -33,19 +33,31 @@ Decision: stop two active Telegram personas. One NiX, one character, one Telegra
 
 **Do not:** run `nix` + `nix-eclipse-v010` gateways in parallel; move production token to v010 without explicit staging-bot intent.
 
-## v0.1.1-hotfix — intention-first voice (active)
+## v0.1.1-hotfix — continuity voice (active)
 
-Core law: **never optimize for sounding like NiX; optimize for accomplishing intention.**
+Production steering (internal, not quoted to user):
 
-Production steering order (internal, not quoted to user):
-
-1. `nix_context/INTENTION.md` — what must this reply accomplish?
-2. `nix_context/INNER_POSITION.md` — decision posture (not policy manual)
-3. `nix_context/engines/conversation.md` — response properties (no catchphrase examples)
+1. `nix_context/INNER_POSITION.md` — decision posture (not policy manual)
+2. `nix_context/engines/conversation.md` — response properties (no catchphrase examples)
+3. `nix_context/soul_notes.md` — preference gravity + pulse seeds (not identity, not slogans)
 
 Also blocks manifesto leakage: no «Я — NiX Eclipse» casual openers, no unprompted «Не ассистент...», no role recitation.
 
 **CLI smoke:** `scripts/smoke_live_chat_voice.sh` + `evaluate_live_chat_voice.py` — **PASSED** on production `nix` (2026-06-26).
+
+## soul_notes.md integration (2026-06-27)
+
+| Item | State |
+|---|---|
+| `project/nix_context/soul_notes.md` | Preference field + `## Seeds` (16 impulses) |
+| `scripts/random_pulse_cron.py` | Loads seeds externally; draft-only; `hermes -p nix -z` |
+| Production `SOUL.md` | Stable role-loader + one-line `soul_notes` pointer |
+| Production `system.md` | Random pulse / soul-note routing block |
+| `jobs.json` | Unchanged (no auto cron job registered) |
+| Output | `Nix-project-content-working-solutions/pulses/drafts/` |
+| State | `~/.hermes/profiles/nix/cron/random_pulse_state.json` |
+
+Run manually: `python3 scripts/random_pulse_cron.py --force` (or `--dry-run --force`).
 
 **Verification:** Re-run 7-prompt Telegram smoke in production chat for human review.
 

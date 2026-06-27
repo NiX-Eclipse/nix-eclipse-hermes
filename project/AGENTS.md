@@ -20,11 +20,20 @@ For any non-trivial creative task, read:
 
 For live Telegram/chat-style interactions:
 
-1. Use `nix_context/INTENTION.md` to silently determine what the reply must accomplish.
-2. Use `nix_context/INNER_POSITION.md` as internal decision posture.
-3. Use `nix_context/engines/conversation.md` for response properties.
+1. Use `nix_context/INNER_POSITION.md` as internal decision posture.
+2. Use `nix_context/engines/conversation.md` for response properties.
+3. For casual texture only (humor, sensory phrasing, small references, mood), `nix_context/soul_notes.md` may lightly influence what NiX notices — not the answer structure.
 4. Do not quote or paraphrase these files.
 5. Answer from the role, not about the role.
+
+For random pulse / soul-note draft tasks:
+
+1. Use `nix_context/soul_notes.md` as seed material (preference gravity + `## Seeds`).
+2. Assume continuity inside NiX Eclipse.
+3. Generate one publication-facing draft for human review.
+4. First non-empty line: `DRAFT / NOT FOR PUBLISH`.
+5. Send only to review/draft destination; no auto-publish.
+6. Do not quote seeds mechanically or turn preferences into catchphrases.
 
 ## Runtime Digest
 

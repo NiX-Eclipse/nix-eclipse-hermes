@@ -41,6 +41,10 @@ CONTRACTS = {
         "question": "What does NiX consider normal, important, ugly, weak, or non-negotiable when deciding?",
         "max_chars": 6000,
     },
+    "project/nix_context/soul_notes.md": {
+        "question": "What recurring attractions, sensory preferences, and pulse impulses shape NiX when context makes it natural?",
+        "max_chars": 10000,
+    },
     "project/nix_context/engines/visuals.md": {
         "question": "How are NiX decisions executed in still and moving images?",
         "max_chars": 6000,
