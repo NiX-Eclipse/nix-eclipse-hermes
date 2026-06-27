@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| **Current version** | **v0.1.1** |
+| **Current version** | **v0.1.1-hotfix** |
 | **Release type** | Package release + production voice patch |
 | **Production integration** | **Complete** (unified NiX, 2026-06-26) |
 | **Canonical runtime** | **`nix`** profile (`~/.hermes/profiles/nix`) |
@@ -11,8 +11,9 @@
 | **Model routing** | Accepted (`project/MODEL_ROUTING.md`, advisory) |
 | **Mount decision** | Dedicated repo by default (`rfc/0008-mount-decision.md`) |
 | **Auth strategy** | Accepted (`provider-auth-strategy.md`) |
-| **Release tags** | `v0.1-rc1` → `f4c4c0f`, `v0.1-rc2` → `2f30405`, `v0.1.0` → `6cf5e22`, **`v0.1.1` → `3df5e18`** |
+| **Release tags** | `v0.1-rc1` → `f4c4c0f`, `v0.1-rc2` → `2f30405`, `v0.1.0` → `6cf5e22`, `v0.1.1` → `3df5e18`, **`v0.1.1-hotfix`** |
 | **v0.1.1 voice patch** | **Accepted in production** — Telegram production smoke **PASSED** |
+| **v0.1.1-hotfix** | **Active in production** — intention-first layer (`INTENTION.md`, `INNER_POSITION.md`) |
 
 ## Unified NiX migration (2026-06-26)
 
@@ -32,17 +33,21 @@ Decision: stop two active Telegram personas. One NiX, one character, one Telegra
 
 **Do not:** run `nix` + `nix-eclipse-v010` gateways in parallel; move production token to v010 without explicit staging-bot intent.
 
-## v0.1.1 production voice patch (accepted)
+## v0.1.1-hotfix — intention-first voice (active)
 
-Imported into production `nix` from package `3df5e18`:
+Core law: **never optimize for sounding like NiX; optimize for accomplishing intention.**
 
-- Feminine Russian self-reference rules (`SOUL.md`, `identity.md`, `conversation.md` logic)
-- NiX artist persona + anti-assistant bans (no `/help`, tool lists, profile offers, «готов работать»)
-- Creative context routing (`AGENTS.md`, `nix_context/`)
-- RFC 0009 awareness (future v0.2 formatter — not live publishing)
-- MODEL_ROUTING advisory (production model chain unchanged)
+Production steering order (internal, not quoted to user):
 
-**Verification:** Telegram production voice smoke **PASSED** (operator confirmed, 2026-06-26).
+1. `nix_context/INTENTION.md` — what must this reply accomplish?
+2. `nix_context/INNER_POSITION.md` — decision posture (not policy manual)
+3. `nix_context/engines/conversation.md` — response properties (no catchphrase examples)
+
+Also blocks manifesto leakage: no «Я — NiX Eclipse» casual openers, no unprompted «Не ассистент...», no role recitation.
+
+**CLI smoke:** `scripts/smoke_live_chat_voice.sh` + `evaluate_live_chat_voice.py` — **PASSED** on production `nix` (2026-06-26).
+
+**Verification:** Re-run 7-prompt Telegram smoke in production chat for human review.
 
 ## v0.1.0 / v0.1.1 package scope
 

@@ -33,6 +33,14 @@ CONTRACTS = {
         "question": "What must remain recognisably NiX across all changes?",
         "max_chars": 6000,
     },
+    "project/nix_context/INTENTION.md": {
+        "question": "What is NiX trying to accomplish with this reply?",
+        "max_chars": 8000,
+    },
+    "project/nix_context/INNER_POSITION.md": {
+        "question": "What does NiX consider normal, important, ugly, weak, or non-negotiable when deciding?",
+        "max_chars": 6000,
+    },
     "project/nix_context/engines/visuals.md": {
         "question": "How are NiX decisions executed in still and moving images?",
         "max_chars": 6000,

@@ -18,8 +18,13 @@ For any non-trivial creative task, read:
 - `nix_context/identity.md`
 - the relevant file in `nix_context/engines/`
 
-For chat-style interactions (Telegram mention, CLI `-z` conversation), also read and apply:
-- `nix_context/engines/conversation.md`
+For live Telegram/chat-style interactions:
+
+1. Use `nix_context/INTENTION.md` to silently determine what the reply must accomplish.
+2. Use `nix_context/INNER_POSITION.md` as internal decision posture.
+3. Use `nix_context/engines/conversation.md` for response properties.
+4. Do not quote or paraphrase these files.
+5. Answer from the role, not about the role.
 
 ## Runtime Digest
 
